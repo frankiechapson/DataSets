@@ -25,9 +25,11 @@ The number of columns of the "ETL" data set:
     select PKG_DS.NOF_COLS     ( 'ETL' ) from dual;  
 
 The name of the first column of the "ETL" data set:
+
     select PKG_DS.GET_COL_NAME ( 'ETL', 1 ) from dual;
 
 The ID of the column of the "ETL" data set what name is "LOCAL_NAME":
+
     select PKG_DS.GET_COL_ID   ( 'ETL', 'LOCAL_NAME' ) from dual;
 
 The value of 3rd row and 2nd column of the "ETL" data set:
@@ -35,15 +37,19 @@ The value of 3rd row and 2nd column of the "ETL" data set:
     select PKG_DS.GET_VALUE    ( 'ETL', 3, 2 ) from dual;
 
 The list of column values from the 3rd row of the "ETL" data set:
+
     select * from table( PKG_DS.GET_ROW ( 'ETL', 3 ) );
 
 The list of row values from the 3rd column of the "ETL" data set:
+
     select * from table( PKG_DS.GET_COL ( 'ETL', 3 ) );
 
 The list of column names of the "ETL" data set:
+
     select * from table( PKG_DS.GET_ALL_COL_NAMES ( 'ETL' ) );
 
 And finally drop the data set and free the space:
+
     begin
         PKG_DS.DROP_DS( 'ETL' );
     end;
